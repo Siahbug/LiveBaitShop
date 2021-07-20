@@ -1,0 +1,182 @@
+:root{
+  --primary: #b3d9ff;
+  --dark: #000d1a;
+  --light: #e6f2ff;
+  --shadow: 0 3px 5px rgba(104, 104, 104, 0.8);
+}
+html{
+  box-sizing: border-box;
+  font-family: arial, helvectia, sans-serif;
+  color: var(--dark);
+}
+body{
+  background: #e6f2ff;
+  margin: 30px 50px;
+  line-height: 1.4;
+}
+img{
+  max-width: 100%;
+}
+footer{
+  margin-top: 2rem;
+  background: #003366;
+  color: var(--light);
+  text-align: center;
+  padding: 1rem;
+  display: inline-block;
+}
+.about-us > img{
+  border-radius: 8px;
+}
+.btn{
+  background-color: var(--dark);
+  color: var(--light);
+  padding: 0.6rem 0.5rem;
+  text-decoration: none;
+  border: 0;
+  text-align: center;
+  min-height: 5px
+}
+.wrapper{
+  display: grid;
+  grid-gap: 20px;
+}
+/*Nav styles*/
+.main-nav{
+  background: url(images/headerimage.webp);
+  background-size: cover;
+  width: 100%
+}
+
+.main-nav ul{
+  display:grid;
+  grid-gap: 20px;
+  list-style: none;
+  padding: 0;
+  grid-template-columns: repeat(3,1fr);
+}
+
+.main-nav a{
+  background: var(--primary);
+  display: block;
+  text-decoration: none;
+  padding: 0.8rem;
+  text-align: center;
+  color: var(--dark);
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow);
+}
+
+.main-nav a:hover{
+  background: #4da6ff;
+  color: var(--light);
+}
+
+.top-container{
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas:
+  'showcase showcase showcase'
+  'top1 top2 top3';
+}
+/*showcase styles*/
+.showcase{
+  grid-area: showcase;
+  min-height: 200px;
+  background: url("images/bait.jpg");
+  background-size: cover;
+  color: var(--light);
+  padding: 3rem;
+  box-shadow: var(--shadow);
+}
+.showcase h1{
+  font-size: 2rem;
+}
+.showcase p{
+  font-size: 1.4rem;
+  margin: 0px;
+}
+.top-box{
+  display: grid;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  background: var(--primary);
+}
+.top-box-a{
+  grid-area: top1;
+}
+.top-box-b{
+  grid-area: top2;
+}
+.top-box-c{
+  grid-area: top3;
+}
+.info{
+  background: var(--primary);
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-gap: 20px;
+  padding: 3em;
+  grid-template-columns: repeat(1, 1fr);
+}
+/*Social buttons*/
+.fa {
+  padding: 10px;
+  font-size: 5px;
+  width: 3px;
+  text-align: center;
+  text-decoration: none;
+  margin: 3px 1px 2px 1px;
+}
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.5;
+}
+/* Facebook */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+/*responsive*/
+@media screen and (max-width:700px){
+  .top-container{
+    grid-template-areas:
+    'showcase showcase '
+    'top1'
+    'top2 top3';
+  }
+  .main-nav ul{
+    grid-template-columns: 1fr;
+  }
+  .info{
+    grid-template-columns: 1fr;
+  }
+  .info .btn{
+    display: block;
+    margin:auto;
+    text-align: center;
+  }
+}
+@media(max-width:500px){
+  .top-container{
+    grid-template-areas:
+    'showcase'
+    'top1'
+    'top2'
+    'top3'
+  }
+}
